@@ -1,4 +1,3 @@
-# repository-template
-Repository Template for my projects 
+# project-hashmap-top
 
-This is mainly for webpack
+A TOP project where hash map is created
