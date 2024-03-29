@@ -28,6 +28,10 @@ const CreateHashMap = (capacity = 16) => {
             const index = hash(key);
             return _buckets[index].contains(key);
         },
+        has: (key) => {
+            const index = hash(key);
+            return _buckets[index].find(key);
+        },
         //some testing fn
         getNodes: () => console.log(_nodes),
     }
