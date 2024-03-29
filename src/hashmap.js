@@ -32,6 +32,16 @@ const CreateHashMap = (capacity = 16) => {
             const index = hash(key);
             return _buckets[index].find(key);
         },
+        remove: (key) => {
+            const index = hash(key);
+            
+            if(_buckets[index].removeAt(key)){
+                _nodes--;
+                return true;
+            }else{
+                return false;
+            }
+        },
         //some testing fn
         getNodes: () => console.log(_nodes),
     }
