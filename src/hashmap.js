@@ -3,7 +3,7 @@ import { CreateNode } from "./node";
 
 const CreateHashMap = (capacity = 16) => {
     const _loadFactor = 0.75;
-    const _buckets = Array.from({ length: capacity }, () => CreateLinkedList() );
+    let _buckets = Array.from({ length: capacity }, () => CreateLinkedList());
     let _nodes = 0; 
 
     function hash(key) {
@@ -41,13 +41,19 @@ const CreateHashMap = (capacity = 16) => {
             }else{
                 return false;
             }
-        },length: () => {
+        },
+        length: () => {
             let size = 0;
             for (const map of _buckets) {
                 size += map.size();
             }
             return size;
         },
+        clear: () => {
+            _buckets = Array.from({ length: capacity }, () => CreateLinkedList());
+            _nodes = 0; 
+        },
+
     }
 }
 

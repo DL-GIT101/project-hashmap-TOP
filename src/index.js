@@ -37,3 +37,10 @@ console.log('set - key: css, value: style - index: ' + map.hash('css'));
 map.set('html','frame');
 console.log('set - key: html, value: frame - index: ' + map.hash('html'));
 console.log('length - ' + map.length());
+console.log('---------------');
+//clear function
+map.clear();
+console.log('clear');
+console.log('length - ' + map.length());
+console.log('get - key: don - result: ' + map.get('don'));
+console.log('has - key: ruby - result: ' + map.has('ruby'));
