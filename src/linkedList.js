@@ -147,7 +147,18 @@ const CreateLinkedList = () => {
             }
             _headNode = (indexAt(_headNode));
             return result;
-        }
+        },
+        allKeys: () => {
+            let arr = [];
+            const tailCheck = (node) => {
+                if(node){
+                    arr.push(node.getKey());
+                    tailCheck(node.getNext());
+                } 
+            }
+            tailCheck(_headNode);
+            return arr;
+        },
     }
 }
 
