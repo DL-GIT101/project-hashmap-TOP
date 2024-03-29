@@ -53,7 +53,13 @@ const CreateHashMap = (capacity = 16) => {
             _buckets = Array.from({ length: capacity }, () => CreateLinkedList());
             _nodes = 0; 
         },
-
+        keys: () => {
+            let arr = [];
+            for (const map of _buckets) {
+                arr = arr.concat(map.allKeys());
+            }
+            return arr;
+        },
     }
 }
 

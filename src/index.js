@@ -44,3 +44,18 @@ console.log('clear');
 console.log('length - ' + map.length());
 console.log('get - key: don - result: ' + map.get('don'));
 console.log('has - key: ruby - result: ' + map.has('ruby'));
+map.set('don','lhenard');
+map.set('nod','dranehl');
+map.set('Don','Lhenard');
+map.set('java','script');
+map.set('ruby','rail');
+map.set('c','sharp');
+console.log('brought back all six nodes')
+console.log('---------------');
+// keys function
+console.log('keys: ' + map.keys());
+map.set('php','server');
+console.log('set - key: php, value: server - index: ' + map.hash('php'));
+console.log('keys: ' + map.keys());
+console.log('remove - key: nod - result: ' + map.remove('nod'));
+console.log('keys: ' + map.keys());
