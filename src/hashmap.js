@@ -21,8 +21,15 @@ const CreateHashMap = (capacity = 16) => {
         hash: hash,
         set: (key, value) => {
             const index = hash(key);
-            _buckets[ index ].append( CreateNode(key, value));
+            _buckets[ index ].append(key, value);
+            _nodes++;
         },
+        get: (key) => {
+            const index = hash(key);
+            return _buckets[index].contains(key);
+        },
+        //some testing fn
+        getNodes: () => console.log(_nodes),
     }
 }
 
