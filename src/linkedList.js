@@ -130,21 +130,23 @@ const CreateLinkedList = () => {
             }
             _headNode = (indexAt(_headNode));
         },
-        removeAt: (index) => {
-            let iteration = 0;
+        removeAt: (key) => {
+            let result = false;
             const indexAt = (node) => {
                 if(node == null) {
                     return;
-                } else if(iteration == index){
+                } else if(node.getKey() == key){
+                    result = true;
                     const newNode = node.getNext();
                     return newNode;
                 } else {
-                    iteration += 1;
+                    result = true;
                     node.setNext(indexAt(node.getNext()));
                     return node;
                 }
             }
             _headNode = (indexAt(_headNode));
+            return result;
         }
     }
 }
