@@ -77,36 +77,28 @@ const CreateLinkedList = () => {
             tailCheck(_headNode);
         },
         contains: (key) => {
-            let result = null;
             const tailCheck = (node) => {
                 if(node == null) {
-                    result = null;
-                }
-                else if(node.getKey() == key) {
-                    result = node.getValue();
+                    return null;
+                } else if(node.getKey() == key) {
+                    return node.getValue();
                 } else {
-                    tailCheck(node.getNext());
+                    return tailCheck(node.getNext());
                 }
             }
-            tailCheck(_headNode);
-            return result;
+            return tailCheck(_headNode);
         },
-        find: (value) => {
-            let index = 0;
-            let result = null;
+        find: (key) => {
             const tailCheck = (node) => {
                 if(node == null) {
-                    result = 'null';
-                }
-                else if(node.getValue() == value) {
-                    result = index;
+                    return false;
+                } else if(node.getKey() == key) {
+                    return true;
                 } else {
-                    index += 1;
-                    tailCheck(node.getNext());
+                    return tailCheck(node.getNext());
                 }
             }
-            tailCheck(_headNode);
-            return result;
+            return tailCheck(_headNode);
         },
         toString: () => {
             let result = "";
