@@ -1,4 +1,3 @@
-import { map } from "lodash";
 import { CreateLinkedList } from "./linkedList";
 
 const CreateHashMap = (capacity = 16) => {
