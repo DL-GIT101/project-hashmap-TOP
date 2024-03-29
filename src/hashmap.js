@@ -41,9 +41,13 @@ const CreateHashMap = (capacity = 16) => {
             }else{
                 return false;
             }
+        },length: () => {
+            let size = 0;
+            for (const map of _buckets) {
+                size += map.size();
+            }
+            return size;
         },
-        //some testing fn
-        getNodes: () => console.log(_nodes),
     }
 }
 

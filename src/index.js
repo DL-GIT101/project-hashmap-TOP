@@ -15,6 +15,7 @@ map.set('ruby','rail');
 console.log('set - key: ruby, value: rail - index: ' + map.hash('ruby'));
 map.set('c','sharp');
 console.log('set - key: c, value: sharp - index: ' + map.hash('c'));
+console.log('length - ' + map.length());
 console.log('---------------');
 //get function
 console.log('get - key: don - result: ' + map.get('don'));
@@ -27,5 +28,12 @@ console.log('---------------');
 //remove function
 console.log('remove - key: nod - result: ' + map.remove('nod'));
 console.log('remove - key: javascript - result: ' + map.remove('javascript'));
-
-map.getNodes();
+console.log('length - ' + map.length());
+console.log('---------------');
+//length function
+console.log('length - ' + map.length());
+map.set('css','style');
+console.log('set - key: css, value: style - index: ' + map.hash('css'));
+map.set('html','frame');
+console.log('set - key: html, value: frame - index: ' + map.hash('html'));
+console.log('length - ' + map.length());
