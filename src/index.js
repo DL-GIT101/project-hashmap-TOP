@@ -52,13 +52,13 @@ map.set('ruby','rail');
 map.set('c','sharp');
 console.log('brought back all six nodes')
 console.log('---------------');
-// keys function
+// keys and values function
 console.log('keys: ' + map.keys());
-console.log('keys: ' + map.values());
+console.log('values: ' + map.values());
 map.set('php','server');
 console.log('set - key: php, value: server - index: ' + map.hash('php'));
 console.log('keys: ' + map.keys());
-console.log('keys: ' + map.values());
+console.log('values: ' + map.values());
 console.log('remove - key: nod - result: ' + map.remove('nod'));
 console.log('keys: ' + map.keys());
-console.log('keys: ' + map.values());
+console.log('values: ' + map.values());
