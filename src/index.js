@@ -66,3 +66,16 @@ console.log('remove - key: nod - result: ' + map.remove('nod'));
 console.log('keys: ' + map.keys());
 console.log('values: ' + map.values());
 console.log(map.entries());
+//growth functionality testing
+map.set('Python','list');
+map.set('html','element');
+map.set('swift','protocol');
+map.set('SQL','query');
+map.set('R','vector');
+map.set('kotlin','Coroutine');
+map.set('TypeScript','Interface');
+map.set('Bash','script');
+console.log(map.entries());
+map.set('php','table');
+console.log('set - key: php, value: table - index: ' + map.hash('php'));
+console.log(map.entries());

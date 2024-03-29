@@ -1,9 +1,9 @@
+import { map } from "lodash";
 import { CreateLinkedList } from "./linkedList";
 
 const CreateHashMap = (capacity = 16) => {
     const _loadFactor = 0.75;
     let _buckets = Array.from({ length: capacity }, () => CreateLinkedList());
-    let _nodes = 0; 
 
     function hash(key) {
         let hashCode = 0;
@@ -16,12 +16,41 @@ const CreateHashMap = (capacity = 16) => {
         return hashCode % capacity;
     }
 
+    function length() {
+            let size = 0;
+            for (const map of _buckets) {
+                size += map.size();
+            }
+            return size;
+    }
+
+    function entries() {
+        let arr = [];
+        for (const map of _buckets) {
+            arr = arr.concat(map.allKeysValues());
+        }
+        return arr;
+    }
+
+    function clear() { 
+        _buckets = Array.from({ length: capacity }, () => CreateLinkedList());
+    }
+
     return {
         hash: hash,
         set: (key, value) => {
+            if( length()/capacity >= _loadFactor){
+                capacity *= 2;
+                const allNodes = entries();
+                clear();
+                allNodes.forEach(pair => {
+                    const index = hash(pair[0]);
+                    _buckets[index].append(pair[0], pair[1]);
+                });
+            }
+ 
             const index = hash(key);
-            _buckets[ index ].append(key, value);
-            _nodes++;
+            _buckets[index].append(key, value);
         },
         get: (key) => {
             const index = hash(key);
@@ -33,25 +62,10 @@ const CreateHashMap = (capacity = 16) => {
         },
         remove: (key) => {
             const index = hash(key);
-            
-            if(_buckets[index].removeAt(key)){
-                _nodes--;
-                return true;
-            }else{
-                return false;
-            }
+            return _buckets[index].removeAt(key);
         },
-        length: () => {
-            let size = 0;
-            for (const map of _buckets) {
-                size += map.size();
-            }
-            return size;
-        },
-        clear: () => {
-            _buckets = Array.from({ length: capacity }, () => CreateLinkedList());
-            _nodes = 0; 
-        },
+        length: length,
+        clear: clear,
         keys: () => {
             let arr = [];
             for (const map of _buckets) {
@@ -66,13 +80,7 @@ const CreateHashMap = (capacity = 16) => {
             }
             return arr;
         },
-        entries: () => {
-            let arr = [];
-            for (const map of _buckets) {
-                arr = arr.concat(map.allKeysValues());
-            }
-            return arr;
-        },
+        entries: entries,
     }
 }
 
