@@ -4,16 +4,16 @@ const CreateLinkedList = () => {
     let _headNode = null;
 
     return {
-        append: (value) => {
+        append: (key, value) => {
             const tailCheck = (node) => {
                 if(node.getNext() == null) {
-                    node.setNext(CreateNode(value));
+                    node.setNext(CreateNode(key, value));
                 } else {
                     tailCheck(node.getNext());
                 }
             }
             if(_headNode == null) {
-                _headNode = CreateNode(value);
+                _headNode = CreateNode(key, value);
             }else {
                 tailCheck(_headNode);
             }
@@ -76,14 +76,14 @@ const CreateLinkedList = () => {
             }
             tailCheck(_headNode);
         },
-        contains: (value) => {
-            let result = false;
+        contains: (key) => {
+            let result = null;
             const tailCheck = (node) => {
                 if(node == null) {
-                    result = false;
+                    result = null;
                 }
-                else if(node.getValue() == value) {
-                    result = true;
+                else if(node.getKey() == key) {
+                    result = node.getValue();
                 } else {
                     tailCheck(node.getNext());
                 }
