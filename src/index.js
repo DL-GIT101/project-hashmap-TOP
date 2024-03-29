@@ -1,4 +1,4 @@
-import { CreateHashMap } from "./hashmap";
+import { CreateHashMap } from "./HashMap/hashmap";
 
 const map = CreateHashMap();
 
