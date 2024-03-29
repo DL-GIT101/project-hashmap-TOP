@@ -1,5 +1,4 @@
 import { CreateLinkedList } from "./linkedList";
-import { CreateNode } from "./node";
 
 const CreateHashMap = (capacity = 16) => {
     const _loadFactor = 0.75;

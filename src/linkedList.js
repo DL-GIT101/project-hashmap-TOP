@@ -6,7 +6,9 @@ const CreateLinkedList = () => {
     return {
         append: (key, value) => {
             const tailCheck = (node) => {
-                if(node.getNext() == null) {
+                if(node.getKey() == key){
+                    node.setValue(value);
+                } else if(node.getNext() == null) {
                     node.setNext(CreateNode(key, value));
                 } else {
                     tailCheck(node.getNext());

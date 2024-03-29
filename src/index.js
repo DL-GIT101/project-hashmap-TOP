@@ -50,6 +50,7 @@ map.set('Don','Lhenard');
 map.set('java','script');
 map.set('ruby','rail');
 map.set('c','sharp');
+map.set('c','plusplus');
 console.log('brought back all six nodes')
 console.log('---------------');
 // keys and values and entries function
