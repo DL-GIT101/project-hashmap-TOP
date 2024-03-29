@@ -60,6 +60,13 @@ const CreateHashMap = (capacity = 16) => {
             }
             return arr;
         },
+        values: () => {
+            let arr = [];
+            for (const map of _buckets) {
+                arr = arr.concat(map.allValues());
+            }
+            return arr;
+        },
     }
 }
 

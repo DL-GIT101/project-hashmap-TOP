@@ -54,8 +54,11 @@ console.log('brought back all six nodes')
 console.log('---------------');
 // keys function
 console.log('keys: ' + map.keys());
+console.log('keys: ' + map.values());
 map.set('php','server');
 console.log('set - key: php, value: server - index: ' + map.hash('php'));
 console.log('keys: ' + map.keys());
+console.log('keys: ' + map.values());
 console.log('remove - key: nod - result: ' + map.remove('nod'));
 console.log('keys: ' + map.keys());
+console.log('keys: ' + map.values());

@@ -159,6 +159,17 @@ const CreateLinkedList = () => {
             tailCheck(_headNode);
             return arr;
         },
+        allValues: () => {
+            let arr = [];
+            const tailCheck = (node) => {
+                if(node){
+                    arr.push(node.getValue());
+                    tailCheck(node.getNext());
+                } 
+            }
+            tailCheck(_headNode);
+            return arr;
+        },
     }
 }
 
