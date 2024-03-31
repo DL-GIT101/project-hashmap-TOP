@@ -23,7 +23,7 @@ const CreateHashSet = (capacity = 16) => {
             return size;
     }
 
-    function entries() {
+    function _entries() {
         let arr = [];
         for (const map of _buckets) {
             arr = arr.concat(map.allKeysValues());
@@ -79,7 +79,7 @@ const CreateHashSet = (capacity = 16) => {
             }
             return arr;
         },
-        entries: entries,
+        entries: _entries,
     }
 }
 

@@ -53,7 +53,7 @@ import { CreateHashSet } from "./hashSet/hashSet";
 // map.set('ruby','rail');
 // map.set('c','sharp');
 // map.set('c','plusplus');
-// console.log('brought back all six nodes')
+// console.log('brought back all 7 nodes')
 // console.log('---------------');
 // // keys and values and entries function
 // console.log('keys: ' + map.keys());
@@ -68,6 +68,7 @@ import { CreateHashSet } from "./hashSet/hashSet";
 // console.log('keys: ' + map.keys());
 // console.log('values: ' + map.values());
 // console.log(map.entries());
+//console.log('---------------');
 // //growth functionality testing
 // map.set('Python','list');
 // map.set('html','element');
@@ -134,4 +135,15 @@ hashset.set('csharp');
 hashset.set('cplusplus');
 console.log('set 7 keys');
 console.log('length - ' + hashset.length());
+console.log('---------------');
+// keys function
+console.log('keys: ');
+console.log(hashset.keys());
+hashset.set('php');
+console.log('set - key: php - index: ' + hashset.hash('php'));
+console.log('keys: ');
+console.log(hashset.keys());
+console.log('remove - key: nod - result: ' + hashset.remove('nod'));
+console.log('keys: ');
+console.log(hashset.keys());
 console.log('---------------');
