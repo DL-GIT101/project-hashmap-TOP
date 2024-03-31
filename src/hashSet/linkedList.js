@@ -4,21 +4,18 @@ const CreateLinkedList = () => {
     let _headNode = null;
 
     return {
-        append: (key, value) => {
+        append: (key) => {
             const tailCheck = (node) => {
-                if(node.getKey() == key){
-                    node.setValue(value);
-                } else if(node.getNext() == null) {
-                    node.setNext(CreateNode(key, value));
+                if(node == null) {
+                    _headNode = CreateNode(key);
+                }
+                else if(node.getNext() == null) {
+                    node.setNext(CreateNode(key));
                 } else {
                     tailCheck(node.getNext());
                 }
             }
-            if(_headNode == null) {
-                _headNode = CreateNode(key, value);
-            }else {
-                tailCheck(_headNode);
-            }
+            tailCheck(_headNode);
         },
         prepend: (value) => {
             const newNode = CreateNode(value);
