@@ -106,3 +106,8 @@ console.log('---------------');
 console.log('has - key: ruby - result: ' + hashset.has('ruby'));
 console.log('has - key: php - result: ' + hashset.has('php'));
 console.log('---------------');
+//remove function
+console.log('remove - key: nod - result: ' + hashset.remove('nod'));
+console.log('remove - key: java - result: ' + hashset.remove('java'));
+console.log('length - ' + hashset.length());
+console.log('---------------');

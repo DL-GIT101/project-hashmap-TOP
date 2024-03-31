@@ -60,7 +60,7 @@ const CreateHashSet = (capacity = 16) => {
             return _buckets[index].find(key);
         },
         remove: (key) => {
-            const index = hash(key);
+            const index = _hash(key);
             return _buckets[index].removeAt(key);
         },
         length: _length,
