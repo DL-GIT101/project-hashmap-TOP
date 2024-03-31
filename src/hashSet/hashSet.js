@@ -31,7 +31,7 @@ const CreateHashSet = (capacity = 16) => {
         return arr;
     }
 
-    function clear() { 
+    function _clear() { 
         _buckets = Array.from({ length: capacity }, () => CreateLinkedList());
     }
 
@@ -41,7 +41,7 @@ const CreateHashSet = (capacity = 16) => {
             if( _length()/capacity >= _loadFactor){
                 capacity *= 2;
                 const allNodes = entries();
-                clear();
+                _clear();
                 allNodes.forEach(node => {
                     const index = _hash(node);
                     _buckets[index].append(node);
@@ -64,7 +64,7 @@ const CreateHashSet = (capacity = 16) => {
             return _buckets[index].removeAt(key);
         },
         length: _length,
-        clear: clear,
+        clear: _clear,
         keys: () => {
             let arr = [];
             for (const map of _buckets) {
