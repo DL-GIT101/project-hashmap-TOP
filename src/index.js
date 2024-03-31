@@ -102,3 +102,7 @@ console.log('---------------');
 console.log('get - key: don - result: ' + hashset.get('don'));
 console.log('get - key: java - result: ' + hashset.get('java'));
 console.log('---------------');
+//has function
+console.log('has - key: ruby - result: ' + hashset.has('ruby'));
+console.log('has - key: php - result: ' + hashset.has('php'));
+console.log('---------------');
