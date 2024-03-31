@@ -52,7 +52,7 @@ const CreateHashSet = (capacity = 16) => {
             _buckets[index].append(key);
         },
         get: (key) => {
-            const index = hash(key);
+            const index = _hash(key);
             return _buckets[index].contains(key);
         },
         has: (key) => {

@@ -80,7 +80,7 @@ const CreateLinkedList = () => {
                 if(node == null) {
                     return null;
                 } else if(node.getKey() == key) {
-                    return node.getValue();
+                    return node.getKey();
                 } else {
                     return tailCheck(node.getNext());
                 }

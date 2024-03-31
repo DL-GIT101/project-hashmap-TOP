@@ -97,3 +97,8 @@ console.log('set - key: ruby - index: ' + hashset.hash('ruby'));
 hashset.set('csharp');
 console.log('set - key: csharp - index: ' + hashset.hash('c'));
 console.log('length - ' + hashset.length());
+console.log('---------------');
+//get function
+console.log('get - key: don - result: ' + hashset.get('don'));
+console.log('get - key: java - result: ' + hashset.get('java'));
+console.log('---------------');
