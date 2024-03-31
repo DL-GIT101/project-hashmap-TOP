@@ -157,29 +157,6 @@ const CreateLinkedList = () => {
             }
             tailCheck(_headNode);
             return arr;
-        },
-        allValues: () => {
-            let arr = [];
-            const tailCheck = (node) => {
-                if(node){
-                    arr.push(node.getValue());
-                    tailCheck(node.getNext());
-                } 
-            }
-            tailCheck(_headNode);
-            return arr;
-        },
-        allKeysValues: () => {
-            let result = [];
-            const tailCheck = (node) => {
-                if(node){
-                    const pair = [node.getKey(), node.getValue()];
-                    result.push(pair);
-                    tailCheck(node.getNext());
-                }
-            }
-            tailCheck(_headNode);
-            return result;
         }
     }
 }

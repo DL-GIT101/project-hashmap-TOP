@@ -1,3 +1,4 @@
+import { keys } from "lodash";
 import { CreateLinkedList } from "./linkedList";
 
 const CreateHashSet = (capacity = 16) => {
@@ -23,10 +24,10 @@ const CreateHashSet = (capacity = 16) => {
             return size;
     }
 
-    function _entries() {
+   function _keys () {
         let arr = [];
         for (const map of _buckets) {
-            arr = arr.concat(map.allKeysValues());
+            arr = arr.concat(map.allKeys());
         }
         return arr;
     }
@@ -40,7 +41,7 @@ const CreateHashSet = (capacity = 16) => {
         set: (key) => {
             if( _length()/capacity >= _loadFactor){
                 capacity *= 2;
-                const allNodes = entries();
+                const allNodes = _keys();
                 _clear();
                 allNodes.forEach(node => {
                     const index = _hash(node);
@@ -65,21 +66,7 @@ const CreateHashSet = (capacity = 16) => {
         },
         length: _length,
         clear: _clear,
-        keys: () => {
-            let arr = [];
-            for (const map of _buckets) {
-                arr = arr.concat(map.allKeys());
-            }
-            return arr;
-        },
-        values: () => {
-            let arr = [];
-            for (const map of _buckets) {
-                arr = arr.concat(map.allValues());
-            }
-            return arr;
-        },
-        entries: _entries,
+        keys: _keys,
     }
 }
 

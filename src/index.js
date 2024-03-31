@@ -147,3 +147,16 @@ console.log('remove - key: nod - result: ' + hashset.remove('nod'));
 console.log('keys: ');
 console.log(hashset.keys());
 console.log('---------------');
+//growth functionality testing
+hashset.set('Python');
+hashset.set('html');
+hashset.set('swift');
+hashset.set('SQL');
+hashset.set('R');
+hashset.set('kotlin');
+hashset.set('TypeScript');
+hashset.set('Bas');
+console.log(hashset.keys());
+hashset.set('php');
+console.log('set - key: php - index: ' + hashset.hash('php'));
+console.log(hashset.keys());
