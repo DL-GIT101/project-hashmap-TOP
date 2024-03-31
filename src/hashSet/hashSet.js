@@ -1,6 +1,6 @@
 import { CreateLinkedList } from "./linkedList";
 
-const CreateHashMap = (capacity = 16) => {
+const CreateHashSet = (capacity = 16) => {
     const _loadFactor = 0.75;
     let _buckets = Array.from({ length: capacity }, () => CreateLinkedList());
 
@@ -83,4 +83,4 @@ const CreateHashMap = (capacity = 16) => {
     }
 }
 
-export { CreateHashMap };
+export { CreateHashSet };
