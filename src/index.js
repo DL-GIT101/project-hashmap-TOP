@@ -111,3 +111,11 @@ console.log('remove - key: nod - result: ' + hashset.remove('nod'));
 console.log('remove - key: java - result: ' + hashset.remove('java'));
 console.log('length - ' + hashset.length());
 console.log('---------------');
+//length function
+console.log('length - ' + hashset.length());
+hashset.set('css');
+console.log('set - key: css - index: ' + hashset.hash('css'));
+hashset.set('html');
+console.log('set - key: html - index: ' + hashset.hash('html'));
+console.log('length - ' + hashset.length());
+console.log('---------------');
